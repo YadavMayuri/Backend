@@ -1,5 +1,5 @@
-export const kunal = (req, res) => {
-    res.send("Sending Message from Kunal Function");
+export const mayuri = (req, res) => {
+    res.send("Sending Message from mayuri Function");
 }
 export const Swaraj = (req, res) => {
     res.send('Sending Message from Swaraj Function')
@@ -10,6 +10,6 @@ export const Anu = (req, res) => {
 export const Krishnan = (req, res) => {
     res.send("Sending Message from Krishnan Function")
 }
-export const Abhi = (req, res) => {
-    res.send("Sending Message from Abhi Function")
+export const megha = (req, res) => {
+    res.send("Sending Message from megha Function")
 }

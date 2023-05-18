@@ -1,12 +1,12 @@
 console.log("Hello World");
 import express from "express";
-import { kunal, Swaraj, Anu, Krishnan, Abhi } from './controllers/All-Controllers.js';
+import { mayuri, Swaraj, Anu, Krishnan, megha } from './controllers/All-Controllers.js';
 
 const app = express();
 
-app.get('/kunal', kunal);
+app.get('/mayuri', mayuri);
 app.get('/anu', Anu);
-app.get('/abhi', Abhi);
+app.get('/megha', megha);
 app.get('/kirshna', Krishnan);
 app.get('/swaraj', Swaraj); // pass two parameters, first is path, second is function
 // app.post();
