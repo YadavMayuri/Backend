@@ -8,8 +8,8 @@ hoisting()
 var sname;    //declaretion
 var sname="Mayuri";
 console.log(sname);
-let lname="let"
-let lname="let"
+// let lname="let"
+// let lname="let"
 console.log(lname);
 const awdizkey ="ggjh"
 cname= "cneme"
