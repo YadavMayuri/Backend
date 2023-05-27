@@ -20,3 +20,6 @@ export const addProduct = async(req, res) => {
         console.log(error)
     }
 }
+
+
+
