@@ -1,6 +1,26 @@
 import Users from "../modals/Users.js";
-export const login = (req, res) => {
+
+export const login = async(req, res) => {
     // return res.send("Hi from login...")
+    try{
+        const {userEmail,userPassword}= req.body
+        if(!userEmail) return res.send ("User email is required")
+        if(!userPassword) return res.send ("User password is required")
+        const response = await Users.find({email:userEmail}).exec()
+        // console.log(response);
+        if(response.length){
+            if(userPassword ===response[0].password){
+                return res.send("You are logged in")
+            }else{
+                return res.send("Wrong pwssored")
+            }
+        }else{
+            return res.send("user not found, Check ypur email")
+        }
+
+    }catch(error){
+        return res.send("You are logged in")
+    }
    
 }
 
@@ -38,3 +58,50 @@ export const register = async (req, res) => {
         return res.send(error)
     }
 }
+
+
+
+export const getUserByEmail = async (req, res) => {
+    try {
+        const {email,name } = req.body;
+        if (!email) return res.send("Email not found!")
+        const response = await Users.find({email}).exec();
+        if (response[0].email=== email) {
+            const res = await Users.updateOne({email},{$set:{name:name}});
+            await res.save();
+            return res.send("record updated")
+            // return res.send(response[0])
+        } else {
+            return res.send("User not found!")
+        }
+    } catch (error) {
+        return res.send(error)
+    }
+}
+
+
+// export const changeEmail = async (req, res)=>{
+//         try {
+//             const {email,name } = req.body;
+//             if (!email) return res.send("Email not found!")
+//             const response = await Users.find({email}).exec();
+//             if (response[0].email=== email) {
+//                 const res = await Users.updateOne({email},{$set:{name:name}});
+//                 await res.save();
+//                 return res.send("record updated")
+//                 // return res.send(response[0])
+//             } else {
+//                 return res.send("User not found!")
+//             }
+//         } catch (error) {
+//             return res.send(error)
+//         }
+//     }
+
+
+
+
+
+
+
+
