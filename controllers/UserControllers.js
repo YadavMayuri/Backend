@@ -70,7 +70,6 @@ export const getUserByEmail = async (req, res) => {
             const res = await Users.updateOne({email},{$set:{name:name}});
             await res.save();
             return res.send("record updated")
-            // return res.send(response[0])
         } else {
             return res.send("User not found!")
         }
@@ -80,23 +79,23 @@ export const getUserByEmail = async (req, res) => {
 }
 
 
-// export const changeEmail = async (req, res)=>{
-//         try {
-//             const {email,name } = req.body;
-//             if (!email) return res.send("Email not found!")
-//             const response = await Users.find({email}).exec();
-//             if (response[0].email=== email) {
-//                 const res = await Users.updateOne({email},{$set:{name:name}});
-//                 await res.save();
-//                 return res.send("record updated")
-//                 // return res.send(response[0])
-//             } else {
-//                 return res.send("User not found!")
-//             }
-//         } catch (error) {
-//             return res.send(error)
-//         }
-//     }
+export const changedata = async (req, res)=>{
+        try {
+            const {email,name } = req.body;
+            if (!email) return res.send("Email not found!")
+            const response = await Users.find({email}).exec();
+            if (response[0].email=== email) {
+                const res = await Users.updateOne({email},{$set:{name:name}});
+                await res.save();
+                return res.send("record updated")
+                // return res.send(response[0])
+            } else {
+                return res.send("User not found!")
+            }
+        } catch (error) {
+            return res.send(error)
+        }
+    }
 
 
 
