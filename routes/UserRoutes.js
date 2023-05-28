@@ -10,7 +10,7 @@ router.post('/login', login);
 router.post('/register', register);
 router.post('/add-product', addProduct);
 router.get('/get-all-products', getAllProducts);
-router.get('/get-user-by-email', getUserByEmail);
+router.post('/get-user-by-email', getUserByEmail);
 // router.post("/change-email", changeEmail)
 
 
