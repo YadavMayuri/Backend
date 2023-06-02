@@ -9,7 +9,7 @@ const User = new Schema({
     otpForNumber: String,
     otpForEmail: String,
     isNumberVerified :{type: Boolean,default: false},
-    isEmailVerified :{type: Boolean,default: false},
+    isEmailVerified :{type: Boolean,default: false}
 
     
 })
