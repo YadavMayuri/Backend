@@ -42,7 +42,7 @@ export const otpNumberVerification = async (req, res) => {
         if (user[0].otpForNumber == otpForNumber) {
             return res.send("Number is verified through OTP"); 
 
-            const user= await Users.findOneAndUpdate({number},{isNumberVerified}).exec();
+            // const user= await Users.findOneAndUpdate({number},{isNumberVerified}).exec();
 
         }
         return res.send("OTP wrong!");
