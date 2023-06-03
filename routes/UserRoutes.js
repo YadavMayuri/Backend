@@ -3,7 +3,7 @@ import { login, register,getUserByEmail,changedata,updateUser} from "../controll
 import { addProduct,getAllProducts } from "../controllers/ProductControllers.js";
 import { abc, mayuri } from "../controllers/All-Controllers.js";
 import { checkEmail, checkName } from "../middlewares/authMiddleware.js";
-import { otpEmailVerification, otpNumberVerification, otpRegistration,  } from "../controllers/OtpControllers.js";
+import { loginOTPchechForEmail, loginOTPchechForNumber, otpEmailVerification, otpLogin, otpNumberVerification, otpRegistration,  } from "../controllers/OtpControllers.js";
 
 
 var router = express.Router();
@@ -18,7 +18,12 @@ router.post('/update-user',checkEmail,checkName,updateUser);
 router.post('/otpRegistration',otpRegistration);
 router.post('/otpNumberVerify',otpNumberVerification);
 router.post('/otpEmailVerify',otpEmailVerification);
+router.post('/otp-login', otpLogin)
+router.post('/loginOTPcheckForNumber', loginOTPchechForNumber);
+router.post('/loginOTPcheckForEmail', loginOTPchechForEmail)
 
+
+// router.post('/otp-check-login', otpCheckLogin)
 
 
 
