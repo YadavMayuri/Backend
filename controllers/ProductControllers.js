@@ -13,8 +13,6 @@ export const addProduct = async(req, res) => {
         console.log(product, "product here");
         await product.save();
         return res.send(product);
-        
-
         // res.send(`Hi  from add`)
     } catch (error) {
         console.log(error)
